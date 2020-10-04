@@ -15,9 +15,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private var current = "0";
-    var value1 : Float? = 0f;
-    var isFloat = false
-    var action = Action.NULL
+    private var value1 : Float? = 0f;
+    private var isFloat = false
+    private var action = Action.NULL
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

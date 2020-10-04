@@ -23,20 +23,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
         android:layout_weight="2"
-        android:background="@android:color/darker_gray">
+        android:background="@android:color/darker_gray"
+        android:baselineAligned="false">
 
         <LinearLayout
-            android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_width="0dp"
             android:layout_weight="1"
             android:orientation="vertical">
             <Button
                 android:id="@+id/button_7"
                 android:onClick="onClick"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:text="@string/_7"
                 android:layout_weight="1"
                 android:textSize="32sp"/>
@@ -45,7 +45,7 @@
                 android:id="@+id/button_4"
                 android:onClick="onClick"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:text="@string/_4"
                 android:textSize="32sp"
                 android:layout_weight="1" />
@@ -54,7 +54,7 @@
                 android:id="@+id/button_1"
                 android:onClick="onClick"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:text="@string/_1"
                 android:textSize="32sp"
                 android:layout_weight="1" />
@@ -63,15 +63,15 @@
                 android:id="@+id/button_dot"
                 android:onClick="onClick"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="."
+                android:layout_height="0dp"
+                android:text="@string/dot"
                 android:textSize="32sp"
                 android:layout_weight="1" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -114,7 +114,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -150,14 +150,14 @@
                 android:onClick="onResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="="
+                android:text="@string/equals"
                 android:textSize="32sp"
                 android:layout_weight="1" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -175,7 +175,7 @@
                 android:onClick="onAction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="÷"
+                android:text="@string/divide"
                 android:textSize="24sp"
                 android:layout_weight="1" />
 
@@ -184,7 +184,7 @@
                 android:onClick="onAction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="×"
+                android:text="@string/x"
                 android:textSize="24sp"
                 android:layout_weight="1" />
 
@@ -193,7 +193,7 @@
                 android:onClick="onAction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="-"
+                android:text="@string/minus"
                 android:textSize="24sp"
                 android:layout_weight="1" />
 
@@ -202,7 +202,7 @@
                 android:onClick="onAction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+"
+                android:text="@string/plus"
                 android:textSize="24sp"
                 android:layout_weight="1" />
 
