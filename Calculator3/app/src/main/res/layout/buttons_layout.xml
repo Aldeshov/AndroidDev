@@ -32,8 +32,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_7"
             app:layout_constraintBottom_toTopOf="@+id/button_1"
             android:text="@string/_4"
-            android:textSize="32sp"
-            android:layout_weight="1" />
+            android:textSize="32sp"/>
 
         <Button
             android:id="@+id/button_1"
@@ -43,8 +42,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_4"
             app:layout_constraintBottom_toTopOf="@+id/button_dot"
             android:text="@string/_1"
-            android:textSize="32sp"
-            android:layout_weight="1" />
+            android:textSize="32sp"/>
 
         <Button
             android:id="@+id/button_dot"
@@ -74,7 +72,6 @@
             app:layout_constraintTop_toTopOf="@+id/second"
             app:layout_constraintBottom_toTopOf="@+id/button_5"
             android:text="@string/_8"
-            android:layout_weight="1"
             android:textSize="32sp"/>
 
         <Button
@@ -85,8 +82,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_8"
             app:layout_constraintBottom_toTopOf="@+id/button_2"
             android:text="@string/_5"
-            android:textSize="32sp"
-            android:layout_weight="1" />
+            android:textSize="32sp"/>
 
         <Button
             android:id="@+id/button_2"
@@ -96,8 +92,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_5"
             app:layout_constraintBottom_toTopOf="@+id/button_0"
             android:text="@string/_2"
-            android:textSize="32sp"
-            android:layout_weight="1" />
+            android:textSize="32sp"/>
 
         <Button
             android:id="@+id/button_0"
@@ -107,8 +102,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_2"
             app:layout_constraintBottom_toBottomOf="@+id/second"
             android:text="@string/_0"
-            android:textSize="32sp"
-            android:layout_weight="1" />
+            android:textSize="32sp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -128,7 +122,6 @@
             app:layout_constraintTop_toTopOf="@+id/third"
             app:layout_constraintBottom_toTopOf="@+id/button_6"
             android:text="@string/_9"
-            android:layout_weight="1"
             android:textSize="32sp"/>
 
         <Button
@@ -139,8 +132,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_9"
             app:layout_constraintBottom_toTopOf="@+id/button_3"
             android:text="@string/_6"
-            android:textSize="32sp"
-            android:layout_weight="1"/>
+            android:textSize="32sp"/>
 
         <Button
             android:id="@+id/button_3"
@@ -150,8 +142,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_6"
             app:layout_constraintBottom_toTopOf="@+id/button_result"
             android:text="@string/_3"
-            android:textSize="32sp"
-            android:layout_weight="1" />
+            android:textSize="32sp"/>
 
         <Button
             android:id="@+id/button_result"
@@ -161,8 +152,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_3"
             app:layout_constraintBottom_toBottomOf="@+id/third"
             android:text="@string/equals"
-            android:textSize="32sp"
-            android:layout_weight="1" />
+            android:textSize="32sp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -182,7 +172,6 @@
             app:layout_constraintTop_toTopOf="@+id/fourth"
             app:layout_constraintBottom_toTopOf="@+id/button_divide"
             android:text="@string/del"
-            android:layout_weight="1"
             android:textSize="18sp"/>
 
         <Button
@@ -193,8 +182,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_delete"
             app:layout_constraintBottom_toTopOf="@+id/button_multiply"
             android:text="@string/divide"
-            android:textSize="24sp"
-            android:layout_weight="1" />
+            android:textSize="24sp"/>
 
         <Button
             android:id="@+id/button_multiply"
@@ -204,8 +192,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_divide"
             app:layout_constraintBottom_toTopOf="@+id/button_subtract"
             android:text="@string/multiply"
-            android:textSize="24sp"
-            android:layout_weight="1" />
+            android:textSize="24sp"/>
 
         <Button
             android:id="@+id/button_subtract"
@@ -215,8 +202,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_multiply"
             app:layout_constraintBottom_toTopOf="@+id/button_product"
             android:text="@string/subtract"
-            android:textSize="24sp"
-            android:layout_weight="1" />
+            android:textSize="24sp"/>
 
         <Button
             android:id="@+id/button_product"
@@ -226,8 +212,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_subtract"
             app:layout_constraintBottom_toBottomOf="@+id/fourth"
             android:text="@string/product"
-            android:textSize="24sp"
-            android:layout_weight="1" />
+            android:textSize="24sp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
