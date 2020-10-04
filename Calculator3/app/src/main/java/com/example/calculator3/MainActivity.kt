@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private var current = "0";
-    var value1 : Float? = 0f;
-    var isFloat = false
-    var action = Action.NULL
+    private var value1 : Float? = 0f;
+    private var isFloat = false
+    private var action = Action.NULL
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,36 +46,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             current = ""
 
         when(p0?.id){
-            button_0.id -> {
-                current += "0"
-            }
-            button_1.id -> {
-                current += "1"
-            }
-            button_2.id -> {
-                current += "2"
-            }
-            button_3.id -> {
-                current += "3"
-            }
-            button_4.id -> {
-                current += "4"
-            }
-            button_5.id -> {
-                current += "5"
-            }
-            button_6.id -> {
-                current += "6"
-            }
-            button_7.id -> {
-                current += "7"
-            }
-            button_8.id -> {
-                current += "8"
-            }
-            button_9.id -> {
-                current += "9"
-            }
+            button_0.id -> { current += "0" }
+            button_1.id -> { current += "1" }
+            button_2.id -> { current += "2" }
+            button_3.id -> { current += "3" }
+            button_4.id -> { current += "4" }
+            button_5.id -> { current += "5" }
+            button_6.id -> { current += "6" }
+            button_7.id -> { current += "7" }
+            button_8.id -> { current += "8" }
+            button_9.id -> { current += "9" }
             button_dot.id -> {
                 if (!isFloat)
                 {
