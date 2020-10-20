@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Mail</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="mail">Mail</string>
+    <string name="new_user_sign_up_now">New user? Sign up now!</string>
+    <string name="back">back</string>
+    <string name="logout">logout</string>
+</resources>
