@@ -3,11 +3,9 @@ package com.example.mail.adapter
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -23,19 +21,20 @@ class MailListAdapter(var user: User, var context: Context?): RecyclerView.Adapt
         return ViewHolder(user, view)
     }
 
-    override fun onBindViewHolder(holder: MailListAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item: Letter = user.mail.mail[position]
         holder.subject.text = item.subject
-        holder.body.text = item.body.take(25) + "..."
+        val con = item.body.take(25) + "..."
+        holder.body.text = con
         if (item.is_read) {
-            holder.subject.setTypeface(holder.subject.getTypeface(), Typeface.NORMAL)
+            holder.subject.setTypeface(holder.subject.typeface, Typeface.NORMAL)
             holder.subject.setBackgroundColor(Color.parseColor("#eaeaea"))
-            holder.body.setTypeface(holder.subject.getTypeface(), Typeface.NORMAL)
+            holder.body.setTypeface(holder.subject.typeface, Typeface.NORMAL)
         }
         else {
-            holder.subject.setTypeface(holder.subject.getTypeface(), Typeface.BOLD)
+            holder.subject.setTypeface(holder.subject.typeface, Typeface.BOLD)
             holder.subject.setBackgroundColor(Color.parseColor("#c0c0c0"))
-            holder.body.setTypeface(holder.subject.getTypeface(), Typeface.BOLD)
+            holder.body.setTypeface(holder.subject.typeface, Typeface.BOLD)
         }
         holder.id = item.id
     }
