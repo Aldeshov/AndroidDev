@@ -1,7 +1,6 @@
 package com.example.todo
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,36 +9,51 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todo.fragment.ToDoItemFragment
+import com.example.todo.dao.ToDoDao
+import com.example.todo.model.ToDoItem
 
-class ToDoListAdapter(var items: ArrayList<ToDoItem>, var context: Context?): RecyclerView.Adapter<ToDoListAdapter.ViewHolder>() {
+class ToDoListAdapter(var items: List<ToDoItem>, var context: Context?): RecyclerView.Adapter<ToDoListAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.todo_item_short, parent, false)
-        return ViewHolder(view)
+
+        return ViewHolder(items, view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item: ToDoItem = items[position]
-        holder.header.text = item.head
-        holder.shortbody.text = item.short_body
-        holder.isDone.isChecked = item.is_done
-        holder.id = item.id
+        holder.title.text = item.title
+        holder.category.text = item.category
+        holder.status.isChecked = item.status
+        holder.id = item.id!!
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
-    class ViewHolder(view: View): RecyclerView.ViewHolder(view), View.OnClickListener {
-        lateinit var id: String
+    class ViewHolder(var items: List<ToDoItem>, view: View): RecyclerView.ViewHolder(view), View.OnClickListener {
+        var id: Int = -1
         var content: ConstraintLayout = view.findViewById(R.id.content)
-        var header: TextView = view.findViewById(R.id.header)
-        var shortbody: TextView = view.findViewById(R.id.short_body)
-        var isDone: CheckBox = view.findViewById(R.id.is_done)
+        var title: TextView = view.findViewById(R.id.header)
+        var category: TextView = view.findViewById(R.id.category)
+        var status: CheckBox = view.findViewById(R.id.status)
+
+        lateinit var db: Database
+        lateinit var  todoDao: ToDoDao
 
         init {
-            content.setOnClickListener(this);
-            isDone.setOnClickListener {
-                items.find { i -> i.id == this.id }?.is_done = isDone.isChecked
+            content.setOnClickListener(this)
+
+            status.setOnClickListener {
+                val checked = items.find { i -> i.id == this.id }
+                checked?.status = status.isChecked
+
+                db = MyApplication.instance.getDatabase()!!
+                todoDao = db.todoDao()
+                if (checked != null) {
+                    todoDao.update(checked)
+                }
             }
         }
 
@@ -49,7 +63,7 @@ class ToDoListAdapter(var items: ArrayList<ToDoItem>, var context: Context?): Re
             (activity as AppCompatActivity).supportFragmentManager.beginTransaction()
                 .replace(R.id.main, ToDoItemFragment(item))
                 .addToBackStack("secondary")
-                .commit();
+                .commit()
         }
     }
 }
