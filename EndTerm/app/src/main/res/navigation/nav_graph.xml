@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/postListFragment">
+    <fragment
+        android:id="@+id/postListFragment"
+        android:name="com.example.post.fragment.PostListFragment"
+        android:label="PostListFragment" >
+        <action
+            android:id="@+id/action_postListFragment_to_postFragment3"
+            app:destination="@id/postFragment">
+            <argument
+                android:name="post"
+                app:argType="com.example.post.model.Post" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.example.post.fragment.PostFragment"
+        android:label="PostFragment" >
+        <action
+            android:id="@+id/action_postFragment_to_postListFragment2"
+            app:destination="@id/postListFragment">
+            <argument
+                android:name="post"
+                app:argType="com.example.post.model.Post" />
+        </action>
+        <action
+            android:id="@+id/action_postFragment_to_commentListFragment"
+            app:destination="@id/commentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentListFragment"
+        android:name="com.example.post.fragment.CommentListFragment"
+        android:label="CommentListFragment" >
+        <action
+            android:id="@+id/action_commentListFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+    </fragment>
+</navigation>
