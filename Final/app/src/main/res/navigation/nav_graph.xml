@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/countries">
+
+    <fragment
+        android:id="@+id/countries"
+        android:name="com.example.afinal.fragments.Countries"
+        android:label="Countries" >
+        <action
+            android:id="@+id/action_countries_to_categories"
+            app:destination="@id/categories">
+            <argument
+                android:name="country"
+                app:argType="com.example.afinal.models.Country" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/categories"
+        android:name="com.example.afinal.fragments.Categories"
+        android:label="Categories" >
+        <action
+            android:id="@+id/action_categories_to_countries"
+            app:destination="@id/countries" />
+        <action
+            android:id="@+id/action_categories_to_newsList"
+            app:destination="@id/newsList">
+            <argument
+                android:name="news"
+                app:argType="com.example.afinal.models.News" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/newsList"
+        android:name="com.example.afinal.fragments.NewsList"
+        android:label="NewsList" >
+        <action
+            android:id="@+id/action_newsList_to_newsDetailed"
+            app:destination="@id/newsDetailed">
+            <argument
+                android:name="news"
+                app:argType="com.example.afinal.models.News" />
+        </action>
+        <action
+            android:id="@+id/action_newsList_to_categories"
+            app:destination="@id/categories" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailed"
+        android:name="com.example.afinal.fragments.NewsDetailed"
+        android:label="NewsDetailed" >
+        <action
+            android:id="@+id/action_newsDetailed_to_newsList"
+            app:destination="@id/newsList" />
+    </fragment>
+</navigation>
